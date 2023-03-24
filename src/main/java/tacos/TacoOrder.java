@@ -1,5 +1,6 @@
 package tacos;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.ArrayList;
 import jakarta.validation.constraints.Digits;
@@ -9,7 +10,7 @@ import org.hibernate.validator.constraints.CreditCardNumber;
 import lombok.Data;
 
 @Data
-public class TacoOrder {
+public class TacoOrder implements Serializable {
 
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
