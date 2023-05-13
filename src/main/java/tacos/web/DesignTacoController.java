@@ -48,10 +48,12 @@ public class DesignTacoController {
     public TacoOrder order() {
         return new TacoOrder();
     }
+
     @ModelAttribute(name = "taco")
     public Taco taco() {
         return new Taco();
     }
+
     @GetMapping
     public String showDesignForm() {
         return "design";
@@ -67,6 +69,7 @@ public class DesignTacoController {
         log.info("Processing taco: {}", taco);
         return "redirect:/orders/current";
     }
+
     private Iterable<Ingredient> filterByType(
             Iterable<Ingredient> ingredients, Type type) {
         return StreamSupport.stream(ingredients.spliterator(), false)
